@@ -1,0 +1,1509 @@
+modules: []
+exported_table_schema: []
+services: []
+forms:
+- container:
+    type: ColumnPanel
+    properties: {col_widths: '{}'}
+  components:
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_2
+    layout_properties: {grid_position: 'WVWMUO,EERCXB'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#f8f1f1',
+        visible: true, text: Registered Vehicles, font_size: 30, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: false, underline: false, icon: ''}
+      name: label_2
+      layout_properties: {grid_position: 'RHFZPF,QPLGYE'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'CSPYTY,ZXVWUI'}
+    components:
+    - type: ColumnPanel
+      properties: {col_widths: '{}'}
+      name: column_panel_3
+      layout_properties: {grid_position: 'NPAVJC,BUSMFM'}
+      components:
+      - type: Button
+        properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
+          foreground: '#f8f1f1', visible: true, text: Views, font_size: null, font: Lucida Console,
+          spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+          background: '#427acf', bold: false, underline: false, icon: ''}
+        name: button_2
+        layout_properties: {grid_position: 'JLZLOQ,EIZQFE'}
+        event_bindings: {click: button_2_click}
+      - type: Button
+        properties: {role: null, align: right, tooltip: '', border: '', enabled: true,
+          foreground: '#f8f1f1', visible: true, text: Home, font_size: null, font: Lucida Console,
+          spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+          background: '#427acf', bold: false, underline: false, icon: ''}
+        name: button_3
+        layout_properties: {grid_position: 'JLZLOQ,DVUCEN'}
+        event_bindings: {click: button_3_click}
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#f8f1f1',
+        visible: true, text: Click here to Insert new Document, font_size: null, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#aaafb5', bold: false, underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'GVFIHH,GODTHQ'}
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '#f8f1f1', visible: true, text: Insert, font_size: null, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: false, underline: false, icon: ''}
+      name: button_1
+      layout_properties: {grid_position: 'GVFIHH,RVLVFA'}
+      event_bindings: {click: button_1_click}
+  - type: RepeatingPanel
+    properties: {item_template: registered_vehicle_db.ItemTemplate2}
+    name: repeating_panel_1
+    layout_properties: {grid_position: 'MRHNCQ,SPKPBC'}
+  is_package: true
+  code: "from ._anvil_designer import registered_vehicle_dbTemplate\nfrom anvil import\
+    \ *\nimport anvil.server\n\nclass registered_vehicle_db(registered_vehicle_dbTemplate):\n\
+    \  def __init__(self, **properties):\n    # Set Form properties and Data Bindings.\n\
+    \    self.init_components(**properties)\n    self.repeating_panel_1.items = anvil.server.call('get_rvdata')\n\
+    \n  def button_1_click(self, **event_args):\n    \"\"\"This method is called when\
+    \ the button is clicked\"\"\"\n    open_form('insert_rv')\n\n  def button_2_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    open_form('database')\n\n  def button_3_click(self, **event_args):\n\
+    \    \"\"\"This method is called when the button is clicked\"\"\"\n    open_form('main_page')\n\
+    \n\n"
+  class_name: registered_vehicle_db
+  id: 5I5IE6AJIC3SZ53VDMLN4RMKHU64CCEM
+- container:
+    type: ColumnPanel
+    properties: {col_widths: '{}'}
+  components:
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: ID, font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: label_1
+    layout_properties: {grid_position: 'CTHFWM,NNLBNA'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: ID,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_1
+    layout_properties: {grid_position: 'CTHFWM,JROESE'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Name, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'FEFXPY,BPIKRR'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Name,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_2
+    layout_properties: {grid_position: 'FEFXPY,XLSQIS'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: License Plate Number, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_3
+    layout_properties: {grid_position: 'AIVMWG,TFAIOJ'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: License Plate Number,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_3
+    layout_properties: {grid_position: 'AIVMWG,UAWGSJ'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Class, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_4
+    layout_properties: {grid_position: 'CPRBCD,ZFYAHZ'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Class,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_4
+    layout_properties: {grid_position: 'CPRBCD,BDFHVX'}
+  - type: Button
+    properties: {role: null, align: right, tooltip: '', border: '', enabled: true,
+      foreground: '#f8f1f1', visible: true, text: Update, font_size: null, font: Lucida Console,
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#427acf', bold: false, underline: false, icon: ''}
+    name: button_1
+    layout_properties: {grid_position: 'NBQYEQ,DLQPLN'}
+    event_bindings: {click: button_1_click}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: false, text: Display, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: result
+    layout_properties: {grid_position: 'YCVCKJ,LFPPKQ'}
+  - type: Button
+    properties: {role: null, align: right, tooltip: '', border: '', enabled: true,
+      foreground: '#f8f1f1', visible: true, text: Delete, font_size: null, font: Lucida Console,
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#427acf', bold: false, underline: false, icon: ''}
+    name: button_2
+    layout_properties: {grid_position: 'YCVCKJ,FOXEWF'}
+    event_bindings: {click: button_2_click}
+  is_package: true
+  code: "from ._anvil_designer import ItemTemplate2Template\nfrom anvil import *\n\
+    import anvil.server\n\nclass ItemTemplate2(ItemTemplate2Template):\n  def __init__(self,\
+    \ **properties):\n    # Set Form properties and Data Bindings.\n    self.init_components(**properties)\n\
+    \    self.text_box_1.visible = True\n    self.text_box_2.visible = True\n    self.text_box_3.visible\
+    \ = True\n    self.text_box_4.visible = True\n    self.text_box_1.text = self.item[\"\
+    _id\"]\n    self.text_box_2.text = self.item['name']\n    self.text_box_3.text\
+    \ = self.item['lpn']\n    self.text_box_4.text = self.item['class']\n\n    # Any\
+    \ code you write here will run when the form opens.\n  def button_1_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    res = anvil.server.call('update_rv',self.text_box_1.text,self.text_box_2.text,self.text_box_3.text,self.text_box_4.text)\n\
+    \    if res:\n      self.result.visible = True\n      self.result.align = \"center\"\
+    \n      self.result.font_size = 20\n      self.result.text = \"Updated\"\n   \
+    \ else:\n      self.result.text = \"Error while Updated\"\n\n  def button_2_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    res = anvil.server.call('delete_rv',self.text_box_1.text)\n    self.text_box_1.visible\
+    \ = False\n    self.text_box_2.visible = False\n    self.text_box_3.visible =\
+    \ False\n    self.text_box_4.visible = False\n    self.label_1.visible = False\n\
+    \    self.label_2.visible = False\n    self.label_3.visible = False\n    self.label_4.visible\
+    \ = False\n    self.button_1.visible = False\n    self.button_2.visible = False\n\
+    \    if res:\n      self.result.visible = True\n      self.result.align = \"center\"\
+    \n      self.result.font_size = 20\n      self.result.text = \"Deleted\"\n   \
+    \ else:\n      self.result.text = \"Error while Deleting\"\n"
+  class_name: registered_vehicle_db.ItemTemplate2
+  id: JHJBPMLJAEDHQX4LETN6IZ5IX2JIFME2
+- container:
+    type: ColumnPanel
+    properties: {col_widths: '{}'}
+  components:
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_2
+    layout_properties: {grid_position: 'JABWEY,JXQIIP'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#f8f1f1',
+        visible: true, text: Guardian Database, font_size: 30, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: false, underline: false, icon: ''}
+      name: label_2
+      layout_properties: {grid_position: 'DUNWIX,POOMIF'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_3
+    layout_properties: {grid_position: 'AMECPZ,XASLVA'}
+    components:
+    - type: Button
+      properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
+        foreground: '#f8f1f1', visible: true, text: Views, font_size: null, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: false, underline: false, icon: ''}
+      name: button_2
+      layout_properties: {grid_position: 'IOMQPN,ZXGBRL'}
+      event_bindings: {click: button_2_click}
+    - type: Button
+      properties: {role: null, align: right, tooltip: '', border: '', enabled: true,
+        foreground: '#f8f1f1', visible: true, text: Home, font_size: null, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: false, underline: false, icon: ''}
+      name: button_3
+      layout_properties: {grid_position: 'IOMQPN,CPODSF'}
+      event_bindings: {click: button_3_click}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'LUJUNP,UUUHLF'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#f8f1f1',
+        visible: true, text: Click here to Insert new document, font_size: null, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#aaafb5', bold: false, underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'VHXMTL,OVDLCH'}
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '#f8f1f1', visible: true, text: Insert, font_size: null, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: false, underline: false, icon: ''}
+      name: button_1
+      layout_properties: {grid_position: 'VHXMTL,XHXCKP'}
+      event_bindings: {click: button_1_click}
+  - type: RepeatingPanel
+    properties: {item_template: guardian_db.ItemTemplate4}
+    name: repeating_panel_1
+    layout_properties: {grid_position: 'OFCMJC,DAJJPB'}
+  is_package: true
+  code: "from ._anvil_designer import guardian_dbTemplate\nfrom anvil import *\nimport\
+    \ anvil.server\n\nclass guardian_db(guardian_dbTemplate):\n  def __init__(self,\
+    \ **properties):\n    # Set Form properties and Data Bindings.\n    self.init_components(**properties)\n\
+    \    self.repeating_panel_1.items = anvil.server.call('get_guardian_data')\n \
+    \   # Any code you write here will run when the form opens.\n\n  def button_1_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    open_form('insert_guard')\n\n  def button_2_click(self, **event_args):\n\
+    \    \"\"\"This method is called when the button is clicked\"\"\"\n    open_form('database')\n\
+    \n  def button_3_click(self, **event_args):\n    \"\"\"This method is called when\
+    \ the button is clicked\"\"\"\n    open_form('main_page')\n\n\n\n"
+  class_name: guardian_db
+  id: KFWJPY5QDTGYQSJ35U5Q5CU5Y7HWGWPH
+- container:
+    type: ColumnPanel
+    properties: {col_widths: '{}'}
+  components:
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'TVNQPD,YEOLAA'}
+    components:
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: ID, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'FQXMDO,DHMXZJ'}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: ID,
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+        font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false}
+      name: text_box_1
+      layout_properties: {grid_position: 'FQXMDO,BPBKCD'}
+  - type: Label
+    properties: {text: Password}
+    name: label_2
+    layout_properties: {grid_position: 'CYTERY,XHBYNP'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Password,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_2
+    layout_properties: {grid_position: 'CYTERY,QYODVM'}
+  - type: Button
+    properties: {role: null, align: right, tooltip: '', border: '', enabled: true,
+      foreground: '#f8f1f1', visible: true, text: Update, font_size: null, font: Lucida Console,
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#427acf', bold: false, underline: false, icon: ''}
+    name: button_1
+    layout_properties: {grid_position: 'SPUBBS,PIBRRD'}
+    event_bindings: {click: button_1_click}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: false, text: Output, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: result
+    layout_properties: {grid_position: 'NGNQEU,MQLHEY'}
+  - type: Button
+    properties: {role: null, align: right, tooltip: '', border: '', enabled: true,
+      foreground: '#f8f1f1', visible: true, text: Delete, font_size: null, font: Lucida Console,
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#427acf', bold: false, underline: false, icon: ''}
+    name: button_2
+    layout_properties: {grid_position: 'NGNQEU,UXNDII'}
+    event_bindings: {click: button_2_click}
+  is_package: true
+  code: "from ._anvil_designer import ItemTemplate4Template\nfrom anvil import *\n\
+    import anvil.server\n\nclass ItemTemplate4(ItemTemplate4Template):\n  def __init__(self,\
+    \ **properties):\n    # Set Form properties and Data Bindings.\n    self.init_components(**properties)\n\
+    \    self.text_box_1.visible = True\n    self.text_box_2.visible = True\n    self.text_box_1.text\
+    \ = self.item[\"_id\"]\n    self.text_box_2.text = self.item['passwd']\n\n   \
+    \ # Any code you write here will run when the form opens.\n  def button_1_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    res = anvil.server.call('update_guard',self.text_box_1.text,self.text_box_2.text)\n\
+    \    if res:\n      self.result.visible = True\n      self.result.align = \"center\"\
+    \n      self.result.font_size = 20\n      self.result.text = \"Updated\"\n   \
+    \ else:\n      self.result.text = \"Error while Updating\"\n\n  def button_2_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    res = anvil.server.call('delete_guard',self.text_box_1.text)\n    self.text_box_1.visible\
+    \ = False\n    self.text_box_2.visible = False\n    self.label_1.visible = False\n\
+    \    self.label_2.visible = False\n    self.button_1.visible = False\n    self.button_2.visible\
+    \ = False\n    if res:\n      self.result.visible = True\n      self.result.align\
+    \ = \"center\"\n      self.result.font_size = 20\n      self.result.text = \"\
+    Deleted\"\n    else:\n      self.result.text = \"Error while Deleting\""
+  class_name: guardian_db.ItemTemplate4
+  id: M6YDEV5KJYYT4MF555IFLS7UFU2HDADF
+- container:
+    type: ColumnPanel
+    properties: {col_widths: '{}'}
+  components:
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_2
+    layout_properties: {grid_position: 'VZGXPT,ADHISU'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#f8f1f1',
+        visible: true, text: Visitor's Vehicle, font_size: 30, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: false, underline: false, icon: ''}
+      name: label_2
+      layout_properties: {grid_position: 'VGAEVF,PNVFQB'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_3
+    layout_properties: {grid_position: 'UWATMT,HBAHHO'}
+    components:
+    - type: Button
+      properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
+        foreground: '#f8f1f1', visible: true, text: Views, font_size: null, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: false, underline: false, icon: ''}
+      name: button_2
+      layout_properties: {grid_position: 'UPADFC,JKYMDA'}
+      event_bindings: {click: button_2_click}
+    - type: Button
+      properties: {role: null, align: right, tooltip: '', border: '', enabled: true,
+        foreground: '#f8f1f1', visible: true, text: Home, font_size: null, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: false, underline: false, icon: ''}
+      name: button_3
+      layout_properties: {grid_position: 'UPADFC,XEPCEV'}
+      event_bindings: {click: button_3_click}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'SSRTOY,WFJKIA'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#f8f1f1',
+        visible: true, text: Click here to Insert new document, font_size: null, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#aaafb5', bold: false, underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'NJMHPE,TKSCPC'}
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '#f8f1f1', visible: true, text: Insert, font_size: null, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: false, underline: false, icon: ''}
+      name: button_1
+      layout_properties: {grid_position: 'NJMHPE,EYJTKI'}
+      event_bindings: {click: button_1_click}
+  - type: RepeatingPanel
+    properties: {item_template: unregistered_vehicle_db.ItemTemplate3}
+    name: repeating_panel_1
+    layout_properties: {grid_position: 'NNZXPW,OKQYUA'}
+  is_package: true
+  code: "from ._anvil_designer import unregistered_vehicle_dbTemplate\nfrom anvil\
+    \ import *\nimport anvil.server\n\nclass unregistered_vehicle_db(unregistered_vehicle_dbTemplate):\n\
+    \  def __init__(self, **properties):\n    # Set Form properties and Data Bindings.\n\
+    \    self.init_components(**properties)\n    self.repeating_panel_1.items = anvil.server.call('get_urvdata')\n\
+    \    # Any code you write here will run when the form opens.\n\n  def button_1_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    open_form('insert_urv')\n\n  def button_2_click(self, **event_args):\n\
+    \    \"\"\"This method is called when the button is clicked\"\"\"\n    open_form('database')\n\
+    \n  def button_3_click(self, **event_args):\n    \"\"\"This method is called when\
+    \ the button is clicked\"\"\"\n    open_form('main_page')\n\n\n\n"
+  class_name: unregistered_vehicle_db
+  id: OECMNE23KBZXE6L62JIF5DNWOQAMWZWV
+- container:
+    type: ColumnPanel
+    properties: {col_widths: '{}'}
+  components:
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'YMEMSJ,SXVTLW'}
+    components:
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: ID, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'WAKJRD,ZEVNIM'}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: ID,
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+        font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false}
+      name: text_box_1
+      layout_properties: {grid_position: 'WAKJRD,PEIQKF'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: License Plate Number, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'IDPHRP,MWJAOF'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: License Plate Number,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_2
+    layout_properties: {grid_position: 'IDPHRP,LTRDVF'}
+  - type: Button
+    properties: {role: null, align: right, tooltip: '', border: '', enabled: true,
+      foreground: '#f8f1f1', visible: true, text: Update, font_size: null, font: Lucida Console,
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#427acf', bold: false, underline: false, icon: ''}
+    name: button_1
+    layout_properties: {grid_position: 'YWFANF,LIUTJL'}
+    event_bindings: {click: button_1_click}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: false, text: Output, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: result
+    layout_properties: {grid_position: 'CEWYWX,MYFAQH'}
+  - type: Button
+    properties: {role: null, align: right, tooltip: '', border: '', enabled: true,
+      foreground: '#f8f1f1', visible: true, text: Delete, font_size: null, font: Lucida Console,
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#427acf', bold: false, underline: false, icon: ''}
+    name: button_2
+    layout_properties: {grid_position: 'CEWYWX,MXUARA'}
+    event_bindings: {click: button_2_click}
+  is_package: true
+  code: "from ._anvil_designer import ItemTemplate3Template\nfrom anvil import *\n\
+    import anvil.server\n\nclass ItemTemplate3(ItemTemplate3Template):\n  def __init__(self,\
+    \ **properties):\n    # Set Form properties and Data Bindings.\n    self.init_components(**properties)\n\
+    \    self.text_box_1.visible = True\n    self.text_box_2.visible = True\n    self.text_box_1.text\
+    \ = self.item[\"_id\"]\n    self.text_box_2.text = self.item['lpn']\n\n    # Any\
+    \ code you write here will run when the form opens.\n  def button_1_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    res = anvil.server.call('update_urv',self.text_box_1.text,self.text_box_2.text)\n\
+    \    if res:\n      self.result.visible = True\n      self.result.align = \"center\"\
+    \n      self.result.font_size = 20\n      self.result.text = \"Updated\"\n   \
+    \ else:\n      self.result.text = \"Error while Updating\"\n\n  def button_2_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    res = anvil.server.call('delete_urv',self.text_box_1.text)\n    self.text_box_1.visible\
+    \ = False\n    self.text_box_2.visible = False\n    self.label_1.visible = False\n\
+    \    self.label_2.visible = False\n    self.button_1.visible = False\n    self.button_2.visible\
+    \ = False\n    if res:\n      self.result.visible = True\n      self.result.align\
+    \ = \"center\"\n      self.result.font_size = 20\n      self.result.text = \"\
+    Deleted\"\n    else:\n      self.result.text = \"Error while Deleting\"\n"
+  class_name: unregistered_vehicle_db.ItemTemplate3
+  id: LCGEERGWMGICDUBXKI6A3YZDNCR6OQUM
+- container:
+    type: ColumnPanel
+    properties: {col_widths: '{}'}
+  components:
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_2
+    layout_properties: {grid_position: 'YPMGHM,TYAZPH'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#f8f1f1',
+        visible: true, text: Guardian Login, font_size: 30, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: false, underline: false, icon: ''}
+      name: label_4
+      layout_properties: {grid_position: 'BQWVTK,JUHEXA'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'JQOTKO,SMCFNH'}
+    components:
+    - type: ColumnPanel
+      properties: {col_widths: '{}'}
+      name: column_panel_3
+      layout_properties: {grid_position: 'SQKNUR,NEREQW'}
+      components:
+      - type: Button
+        properties: {role: null, align: right, tooltip: '', border: '', enabled: true,
+          foreground: '#f8f1f1', visible: true, text: Home, font_size: null, font: Lucida Console,
+          spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+          background: '#427acf', bold: false, underline: false, icon: ''}
+        name: button_2
+        layout_properties: {grid_position: 'KXDXIB,DVTGYG'}
+        event_bindings: {click: button_2_click}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: User ID, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'BOLCBP,UIZAHT'}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: User ID,
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+        font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false}
+      name: text_box_1
+      layout_properties: {grid_position: 'BOLCBP,QYACUE'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Password, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'BSGIWF,HAHXWU'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: true, tooltip: '', placeholder: Password,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_2
+    layout_properties: {grid_position: 'BSGIWF,IVSSVJ'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '#f8f1f1', visible: true, text: Enter, font_size: null, font: Lucida Console,
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#427acf', bold: false, underline: false, icon: ''}
+    name: button_1
+    layout_properties: {grid_position: 'CHWOZN,LHHPFT'}
+    event_bindings: {click: button_1_click}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: false, text: Output, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_3
+    layout_properties: {grid_position: 'GXBVYK,IKNCAM'}
+  is_package: true
+  code: "from ._anvil_designer import guardian_loginTemplate\nfrom anvil import *\n\
+    import anvil.server\n\nclass guardian_login(guardian_loginTemplate):\n  def __init__(self,\
+    \ **properties):\n    # Set Form properties and Data Bindings.\n    self.init_components(**properties)\n\
+    \n    # Any code you write here will run when the form opens.\n\n  def button_1_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    result = anvil.server.call('guardian_login', \n                    \
+    \            self.text_box_1.text,\n                                self.text_box_2.text)\n\
+    \    # If a category is returned set our species \n    if result:\n      open_form('Results')\n\
+    \    else:\n      self.label_3.visible = True\n      self.label_3.text = \"Invalid\
+    \ Login\"\n\n  def button_2_click(self, **event_args):\n    \"\"\"This method\
+    \ is called when the button is clicked\"\"\"\n    open_form('main_page')\n\n\n"
+  class_name: guardian_login
+  id: 6Y6VQPDRLD4ROPYVNS44VUOK3HDXIAHA
+- container:
+    type: ColumnPanel
+    properties: {col_widths: '{}'}
+  components:
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_2
+    layout_properties: {grid_position: 'DOYQQN,ZILLRN'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#f8f1f1',
+        visible: true, text: Automatic License Plate Recogniser, font_size: 25, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: false, underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'XEYBTV,ZWSFVY'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'TXSZCM,UYHGKR'}
+    components:
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '#f8f1f1', visible: true, text: '  Admin  ', font_size: null,
+        font: Lucida Console, spacing_above: small, icon_align: left, spacing_below: small,
+        italic: false, background: '#427acf', bold: false, underline: false, icon: ''}
+      name: admin
+      layout_properties: {grid_position: 'GQWAMH,TAWGFR'}
+      event_bindings: {click: admin_click}
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '#f8f1f1', visible: true, text: ' Guardian', font_size: null,
+        font: Lucida Console, spacing_above: small, icon_align: left, spacing_below: small,
+        italic: false, background: '#427acf', bold: false, underline: false, icon: ''}
+      name: guardian
+      layout_properties: {grid_position: 'HJDKVS,HITEJB'}
+      event_bindings: {click: guardian_click}
+  is_package: true
+  code: "from ._anvil_designer import main_pageTemplate\nfrom anvil import *\nimport\
+    \ anvil.server\n\nclass main_page(main_pageTemplate):\n  def __init__(self, **properties):\n\
+    \    # Set Form properties and Data Bindings.\n    self.init_components(**properties)\n\
+    \n    # Any code you write here will run when the form opens.\n\n  def guardian_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    open_form('guardian_login')\n\n  def admin_click(self, **event_args):\n\
+    \    \"\"\"This method is called when the button is clicked\"\"\"\n    open_form('admin_login')\n\
+    \n\n"
+  class_name: main_page
+  id: IG24ZHULZZZTNSVVWNZVEFJO2Y75UMRS
+- container:
+    type: ColumnPanel
+    properties: {col_widths: '{}'}
+  components:
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_2
+    layout_properties: {grid_position: 'DFGUOK,JVOLVI'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#f8f1f1',
+        visible: true, text: Results, font_size: 30, font: Lucida Console, spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '#427acf',
+        bold: false, underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'SHGQKT,CFIWSJ'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_3
+    layout_properties: {grid_position: 'SWESSE,USJYNZ'}
+    components:
+    - type: Button
+      properties: {role: null, align: right, tooltip: '', border: '', enabled: true,
+        foreground: '#f8f1f1', visible: true, text: Home, font_size: null, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: false, underline: false, icon: ''}
+      name: button_1
+      layout_properties: {grid_position: 'POPCGX,NMDVJZ'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'REOVAG,JBXXVU'}
+    components:
+    - type: FileLoader
+      properties:
+        role: null
+        show_state: true
+        align: center
+        tooltip: ''
+        border: ''
+        file_types: null
+        enabled: true
+        files: []
+        foreground: '#f8f1f1'
+        visible: true
+        text: Upload Image
+        font_size: null
+        font: Lucida Console
+        spacing_above: small
+        icon_align: left
+        spacing_below: small
+        italic: false
+        file: null
+        background: '#427acf'
+        bold: false
+        underline: false
+        multiple: false
+        icon: fa:upload
+      name: file_loader_1
+      layout_properties: {grid_position: 'ZFMVGR,UCORUM'}
+      event_bindings: {change: file_loader_1_change}
+  - type: Image
+    properties: {}
+    name: image_1
+    layout_properties: {grid_position: 'LOYIYZ,XBKVFA'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: false, text: Output, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: result
+    layout_properties: {grid_position: 'LOYIYZ,SYECOQ'}
+    data_bindings: []
+    event_bindings: {show: result_show}
+  class_name: Results
+  code: "from ._anvil_designer import ResultsTemplate\nfrom anvil import *\nimport\
+    \ anvil.server\n\nclass Results(ResultsTemplate):\n  def __init__(self, **properties):\n\
+    \    # Set Form properties and Data Bindings.\n    self.init_components(**properties)\n\
+    \n    # Any code you write here will run when the form opens.\n  def file_loader_1_change(self,\
+    \ file, **event_args):\n    \"\"\"This method is called when a new file is loaded\
+    \ into this FileLoader\"\"\"\n    self.image_1.source = file\n    anpr = anvil.server.call('combine',file)\n\
+    \    \n    if anpr:\n      self.result.visible = True\n      self.result.align\
+    \ = \"center\"\n      self.result.font_size = 25\n      self.result.text = anpr.upper()\n\
+    \    else:\n      self.result.text = \"Nothing\"\n\n\n\n"
+  id: ZTFXPBGFAC7EY4WJZXKH5UFA2476I7KY
+- container:
+    type: ColumnPanel
+    properties: {col_widths: '{}'}
+  components:
+  - type: ColumnPanel
+    properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+      spacing_below: small, background: '#427acf'}
+    name: column_panel_2
+    layout_properties: {grid_position: 'BQHRMY,BQXTHW'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#f8f1f1',
+        visible: true, text: Inserting Admin, font_size: 30, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: true, underline: false, icon: ''}
+      name: label_4
+      layout_properties: {grid_position: 'ODWDEE,ERRTWF', full_width_row: false}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'QKRZGH,QLVGXL'}
+    components:
+    - type: ColumnPanel
+      properties: {col_widths: '{}'}
+      name: column_panel_3
+      layout_properties: {grid_position: 'UWMLCV,ZSUCCT'}
+      components:
+      - type: Button
+        properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
+          foreground: '#f8f1f1', visible: true, text: Views, font_size: null, font: Lucida Console,
+          spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+          background: '#427acf', bold: false, underline: false, icon: ''}
+        name: button_2
+        layout_properties: {grid_position: 'SCTRAL,CNVLDF'}
+        event_bindings: {click: button_2_click}
+      - type: Button
+        properties: {role: null, align: right, tooltip: '', border: '', enabled: true,
+          foreground: '#f8f1f1', visible: true, text: Home, font_size: null, font: Lucida Console,
+          spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+          background: '#427acf', bold: false, underline: false, icon: ''}
+        name: button_3
+        layout_properties: {grid_position: 'SCTRAL,YDWCLB'}
+        event_bindings: {click: button_3_click}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Admin_ID, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'VMNALU,ANYCKD'}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Admin_ID,
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+        font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false}
+      name: text_box_1
+      layout_properties: {grid_position: 'VMNALU,RDIACI'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Name, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'GAHAOD,AGKPWI'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Name,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_2
+    layout_properties: {grid_position: 'GAHAOD,EFIWPN'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Password, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_3
+    layout_properties: {grid_position: 'LLIYDT,WELMTV'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Password,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_3
+    layout_properties: {grid_position: 'LLIYDT,BGKSGR'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '#f8f1f1', visible: true, text: Insert, font_size: null, font: Lucida Console,
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#427acf', bold: false, underline: false, icon: ''}
+    name: button_1
+    layout_properties: {grid_position: 'EMSZRB,FEUXXF'}
+    event_bindings: {click: button_1_click}
+  - type: Label
+    properties: {}
+    name: result
+    layout_properties: {grid_position: 'JGGUKN,OKUUZY'}
+  is_package: true
+  code: "from ._anvil_designer import insert_adminTemplate\nfrom anvil import *\n\
+    import anvil.server\n\nclass insert_admin(insert_adminTemplate):\n  def __init__(self,\
+    \ **properties):\n    # Set Form properties and Data Bindings.\n    self.init_components(**properties)\n\
+    \    self.label_4.font = \"Britannic\"\n    self.result.font_size = 25\n    #\
+    \ Any code you write here will run when the form opens.\n  def button_1_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    res = anvil.server.call('insert',self.text_box_1.text,self.text_box_2.text,self.text_box_3.text)\n\
+    \    if res:\n      self.result.visible = True\n      self.result.align = \"center\"\
+    \n      self.result.font_size = 20\n      self.result.text = \"Inserted\"\n  \
+    \  else:\n      self.result.text = \"Error while Inserting\"\n\n  def button_2_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    open_form('database')\n\n  def button_3_click(self, **event_args):\n\
+    \    \"\"\"This method is called when the button is clicked\"\"\"\n    open_form('main_page')\n\
+    \n\n\n"
+  class_name: insert_admin
+  id: VBCAB3ZIECE2INZMEBBW2NGIFMH6V7IC
+- container:
+    type: ColumnPanel
+    properties: {col_widths: '{}'}
+  components:
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_2
+    layout_properties: {grid_position: 'LPKNRQ,VLJMMP'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#f8f1f1',
+        visible: true, text: Views, font_size: 30, font: Lucida Console, spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '#427acf',
+        bold: false, underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'ABFVRN,MQXOMT'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'OLNJDT,ICCSLR'}
+    components:
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '#f8f1f1', visible: true, text: '      View Admin DB       ',
+        font_size: null, font: Lucida Console, spacing_above: small, icon_align: left,
+        spacing_below: small, italic: false, background: '#427acf', bold: false, underline: false,
+        icon: ''}
+      name: button_1
+      layout_properties: {grid_position: 'DWITQT,KPTAJW'}
+      event_bindings: {click: button_1_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '#f8f1f1', visible: true, text: ' View Registered Vehicles ', font_size: null,
+      font: Lucida Console, spacing_above: small, icon_align: left, spacing_below: small,
+      italic: false, background: '#427acf', bold: false, underline: false, icon: ''}
+    name: button_2
+    layout_properties: {grid_position: 'CHLHJC,IPUTLH'}
+    event_bindings: {click: button_2_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '#f8f1f1', visible: true, text: View UnRegistered Vehicles, font_size: null,
+      font: Lucida Console, spacing_above: small, icon_align: left, spacing_below: small,
+      italic: false, background: '#427acf', bold: false, underline: false, icon: ''}
+    name: button_3
+    layout_properties: {grid_position: 'CBMZTQ,JFHJSH'}
+    event_bindings: {click: button_3_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '#f8f1f1', visible: true, text: '     View Guardian DB     ', font_size: null,
+      font: Lucida Console, spacing_above: small, icon_align: left, spacing_below: small,
+      italic: false, background: '#427acf', bold: false, underline: false, icon: ''}
+    name: button_4
+    layout_properties: {grid_position: 'UNTKAE,GZHZGT'}
+    event_bindings: {click: button_4_click}
+  class_name: database
+  code: "from ._anvil_designer import databaseTemplate\nfrom anvil import *\nimport\
+    \ anvil.server\n\nclass database(databaseTemplate):\n  def __init__(self, **properties):\n\
+    \    # Set Form properties and Data Bindings.\n    self.init_components(**properties)\n\
+    \n    # Any code you write here will run when the form opens.\n\n  def button_1_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    open_form('admin_db')\n\n  def button_2_click(self, **event_args):\n\
+    \    \"\"\"This method is called when the button is clicked\"\"\"\n    open_form('registered_vehicle_db')\n\
+    \n  def button_3_click(self, **event_args):\n    \"\"\"This method is called when\
+    \ the button is clicked\"\"\"\n    open_form('unregistered_vehicle_db')\n\n  def\
+    \ button_4_click(self, **event_args):\n    \"\"\"This method is called when the\
+    \ button is clicked\"\"\"\n    open_form('guardian_db')\n\n\n\n\n"
+  id: SMU5I7XT4NJIQNYKJD6B5QT3VAFYPMGU
+- container:
+    type: ColumnPanel
+    properties: {col_widths: '{}'}
+  components:
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_2
+    layout_properties: {grid_position: 'JVDNKU,TNJVUR'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#f8f1f1',
+        visible: true, text: Admin Login, font_size: 30, font: Lucida Console, spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '#427acf',
+        bold: false, underline: false, icon: ''}
+      name: label_4
+      layout_properties: {grid_position: 'GCOUOU,XANTSZ'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'EBIMPC,UOHZIC'}
+    components:
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Admin_ID, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'UHFYLJ,LDROEU'}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Admin_ID,
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+        font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false}
+      name: text_box_1
+      layout_properties: {grid_position: 'UHFYLJ,UKRUZL'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Password, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'CRCUBH,XFQAMB'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: true, tooltip: '', placeholder: Password,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_2
+    layout_properties: {grid_position: 'CRCUBH,POGBCM'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '#f8f1f1', visible: true, text: Enter, font_size: null, font: Lucida Console,
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#427acf', bold: false, underline: false, icon: ''}
+    name: button_1
+    layout_properties: {grid_position: 'SHPMHT,HYOOKP'}
+    event_bindings: {click: button_1_click}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: false, text: Output, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_3
+    layout_properties: {grid_position: 'UFXXFI,ZXMLSI'}
+  is_package: true
+  code: "from ._anvil_designer import admin_loginTemplate\nfrom anvil import *\nimport\
+    \ anvil.server\n\nclass admin_login(admin_loginTemplate):\n  def __init__(self,\
+    \ **properties):\n    # Set Form properties and Data Bindings.\n    self.init_components(**properties)\n\
+    \n    # Any code you write here will run when the form opens.\n    \n\n  def button_1_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    result = anvil.server.call('admin_login', \n                       \
+    \         self.text_box_1.text,\n                                self.text_box_2.text)\n\
+    \    # If a category is returned set our species \n    if result:\n      open_form('database')\n\
+    \    else:\n      self.label_3.visible = True\n      self.label_3.text = \"Invalid\
+    \ Login\"\n\n"
+  class_name: admin_login
+  id: T4DV36FS4J6SRL2CFXQHRSASL3AN3PLM
+- container:
+    type: ColumnPanel
+    properties: {col_widths: '{}'}
+  components:
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_2
+    layout_properties: {grid_position: 'JCMFBB,JEMJBZ'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#f8f1f1',
+        visible: true, text: Inserting Guardian Record, font_size: 30, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: false, underline: false, icon: ''}
+      name: label_3
+      layout_properties: {grid_position: 'QAIXWO,ZAOGLT'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_3
+    layout_properties: {grid_position: 'TVZICA,YBSYEL'}
+    components:
+    - type: Button
+      properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
+        foreground: '#f8f1f1', visible: true, text: Views, font_size: null, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: false, underline: false, icon: ''}
+      name: button_2
+      layout_properties: {grid_position: 'EEYKCQ,CFTQVR'}
+      event_bindings: {click: button_2_click}
+    - type: Button
+      properties: {role: null, align: right, tooltip: '', border: '', enabled: true,
+        foreground: '#f8f1f1', visible: true, text: Home, font_size: null, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: false, underline: false, icon: ''}
+      name: button_3
+      layout_properties: {grid_position: 'EEYKCQ,WUNCGN'}
+      event_bindings: {click: button_3_click}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'PQDXNT,IWKVXD'}
+    components:
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: ID, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'GIVIHT,QEVZEZ'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: ID,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_1
+    layout_properties: {grid_position: 'PQDXNT,XEYFUO'}
+  - type: Label
+    properties: {text: Password}
+    name: label_2
+    layout_properties: {grid_position: 'YZRBPX,VQGYUS'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Password,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_2
+    layout_properties: {grid_position: 'YZRBPX,NFGDKN'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '#f8f1f1', visible: true, text: Insert, font_size: null, font: Lucida Console,
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#427acf', bold: false, underline: false, icon: ''}
+    name: button_1
+    layout_properties: {grid_position: 'TMCVNS,KPDHYV'}
+    event_bindings: {click: button_1_click}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: false, text: Output, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: result
+    layout_properties: {grid_position: 'LHDISD,AKQEVN'}
+  is_package: true
+  code: "from ._anvil_designer import insert_guardTemplate\nfrom anvil import *\n\
+    import anvil.server\n\nclass insert_guard(insert_guardTemplate):\n  def __init__(self,\
+    \ **properties):\n    # Set Form properties and Data Bindings.\n    self.init_components(**properties)\n\
+    \n    # Any code you write here will run when the form opens.\n\n  def button_1_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    res = anvil.server.call('insert_guardian',self.text_box_1.text,self.text_box_2.text)\n\
+    \    if res:\n      self.result.visible = True\n      self.result.align = \"center\"\
+    \n      self.result.font_size = 20\n      self.result.text = \"Inserted\"\n  \
+    \  else:\n      self.result.text = \"Error while Inserting\"\n\n  def button_2_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    open_form('database')\n\n  def button_3_click(self, **event_args):\n\
+    \    \"\"\"This method is called when the button is clicked\"\"\"\n    open_form('main_page')\n\
+    \n\n"
+  class_name: insert_guard
+  id: K3QNCRUZ4Y42V2DKA7LY6ACDLGCAHZXR
+- container:
+    type: ColumnPanel
+    properties: {col_widths: '{}'}
+  components:
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_2
+    layout_properties: {grid_position: 'MGJULZ,DQZOLK'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#f8f1f1',
+        visible: true, text: Inserting Vehicles, font_size: 30, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: false, underline: false, icon: ''}
+      name: label_5
+      layout_properties: {grid_position: 'HDQROM,XTMNDL'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'AKECFZ,SEHNMZ'}
+    components:
+    - type: ColumnPanel
+      properties: {col_widths: '{}'}
+      name: column_panel_3
+      layout_properties: {grid_position: 'TMFHVJ,WBJEDZ'}
+      components:
+      - type: Button
+        properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
+          foreground: '#f8f1f1', visible: true, text: Views, font_size: null, font: Lucida Console,
+          spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+          background: '#427acf', bold: false, underline: false, icon: ''}
+        name: button_2
+        layout_properties: {grid_position: 'WDIBKP,XFBHBY'}
+        event_bindings: {click: button_2_click}
+      - type: Button
+        properties: {role: null, align: right, tooltip: '', border: '', enabled: true,
+          foreground: '#f8f1f1', visible: true, text: Home, font_size: null, font: Lucida Console,
+          spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+          background: '#427acf', bold: false, underline: false, icon: ''}
+        name: button_3
+        layout_properties: {grid_position: 'WDIBKP,DPVWLN'}
+        event_bindings: {click: button_3_click}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: ID, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'ZISSGQ,ZYBFVA'}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: ID,
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+        font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false}
+      name: text_box_1
+      layout_properties: {grid_position: 'ZISSGQ,FTZFCG'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Name, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'GRLMQS,DBQWCJ'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Name,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_2
+    layout_properties: {grid_position: 'GRLMQS,CIBEBV'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: License Plate Number, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_3
+    layout_properties: {grid_position: 'UPPCZY,UPZVNC'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: License Plate Number,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_3
+    layout_properties: {grid_position: 'UPPCZY,FUFRCF'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Class, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_4
+    layout_properties: {grid_position: 'ZIFIDK,NODHNM'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Class,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_4
+    layout_properties: {grid_position: 'ZIFIDK,SDSQLR'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '#f8f1f1', visible: true, text: Insert, font_size: null, font: Lucida Console,
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#427acf', bold: false, underline: false, icon: ''}
+    name: button_1
+    layout_properties: {grid_position: 'WXSWTJ,EPQYGX'}
+    event_bindings: {click: button_1_click}
+  - type: Label
+    properties: {}
+    name: result
+    layout_properties: {grid_position: 'AMUCJA,MCTKZW'}
+  is_package: true
+  code: "from ._anvil_designer import insert_rvTemplate\nfrom anvil import *\nimport\
+    \ anvil.server\n\nclass insert_rv(insert_rvTemplate):\n  def __init__(self, **properties):\n\
+    \    # Set Form properties and Data Bindings.\n    self.init_components(**properties)\n\
+    \    self.label_4.font = \"Britannic\"\n    self.result.font_size = 25\n    #\
+    \ Any code you write here will run when the form opens.\n  def button_1_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    res = anvil.server.call('insert_rvehicles',self.text_box_1.text,self.text_box_2.text,self.text_box_3.text,self.text_box_4.text)\n\
+    \    if res:\n      self.result.visible = True\n      self.result.align = \"center\"\
+    \n      self.result.font_size = 20\n      self.result.text = \"Inserted\"\n  \
+    \  else:\n      self.result.text = \"Error while Inserting\"\n\n  def button_2_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    open_form('database')\n\n  def button_3_click(self, **event_args):\n\
+    \    \"\"\"This method is called when the button is clicked\"\"\"\n    open_form('main_page')\n\
+    \n\n"
+  class_name: insert_rv
+  id: F3RRISRAE4JH7PIVJ7NRGQU2DXK7BGAO
+- container:
+    type: ColumnPanel
+    properties: {col_widths: '{}'}
+  components:
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_2
+    layout_properties: {grid_position: 'CQGSVS,KXITEI'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#f8f1f1',
+        visible: true, text: Admin Database, font_size: 30, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: false, underline: false, icon: ''}
+      name: label_2
+      layout_properties: {grid_position: 'LLRWPR,TCAVWC'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_3
+    layout_properties: {grid_position: 'YEZPYU,IFMTZP'}
+    components:
+    - type: Button
+      properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
+        foreground: '#f8f1f1', visible: true, text: Views, font_size: null, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: false, underline: false, icon: ''}
+      name: button_2
+      layout_properties: {grid_position: 'IKIGZH,XKIFUF'}
+      event_bindings: {click: button_2_click}
+    - type: Button
+      properties: {role: null, align: right, tooltip: '', border: '', enabled: true,
+        foreground: '#f8f1f1', visible: true, text: Home, font_size: null, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: false, underline: false, icon: ''}
+      name: button_3
+      layout_properties: {grid_position: 'IKIGZH,TADNTR'}
+      event_bindings: {click: button_3_click}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'BQHNXM,CCDTDP'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#f8f1f1',
+        visible: true, text: To Insert New Document click here, font_size: null, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#aaafb5', bold: false, underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'NATQEO,TNGSMA'}
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '#f8f1f1', visible: true, text: Insert, font_size: null, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: false, underline: false, icon: ''}
+      name: button_1
+      layout_properties: {grid_position: 'NATQEO,AFXDMH'}
+      event_bindings: {click: button_1_click}
+  - type: RepeatingPanel
+    properties: {item_template: admin_db.ItemTemplate1}
+    name: repeating_panel_1
+    layout_properties: {grid_position: 'APXNFY,JZVLPF'}
+  is_package: true
+  code: "from ._anvil_designer import admin_dbTemplate\nfrom anvil import *\nimport\
+    \ anvil.server\n\nclass admin_db(admin_dbTemplate):\n  def __init__(self, **properties):\n\
+    \    # Set Form properties and Data Bindings.\n    self.init_components(**properties)\n\
+    \n    # Any code you write here will run when the form opens.\n    self.repeating_panel_1.items\
+    \ = anvil.server.call('get_data')\n\n  def button_1_click(self, **event_args):\n\
+    \    \"\"\"This method is called when the button is clicked\"\"\"\n    open_form('insert_admin')\n\
+    \n  def button_2_click(self, **event_args):\n    \"\"\"This method is called when\
+    \ the button is clicked\"\"\"\n    open_form('database')\n\n  def button_3_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    open_form('main_page')\n\n\n\n"
+  class_name: admin_db
+  id: P45H2B22YKTNTWBHRAPZYBHWXFBVMM22
+- container:
+    type: ColumnPanel
+    properties: {col_widths: '{}'}
+  components:
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'UZLDAG,GAHSIH'}
+    components:
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Admin_ID, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'FQAGPX,YALJZT'}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: admin_id,
+        border: '', enabled: true, foreground: '', visible: false, text: '', font_size: null,
+        font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false}
+      name: text_box_1
+      layout_properties: {grid_position: 'FQAGPX,PEGEZV'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Name, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'PRZDIT,ZVAVPW'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Name,
+      border: '', enabled: true, foreground: '', visible: false, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_2
+    layout_properties: {grid_position: 'PRZDIT,FIKRDH'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Password, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_3
+    layout_properties: {grid_position: 'AHSXXA,MJIRET'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Password,
+      border: '', enabled: true, foreground: '', visible: false, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_3
+    layout_properties: {grid_position: 'AHSXXA,BPQKPE'}
+  - type: Button
+    properties: {role: null, align: right, tooltip: '', border: '', enabled: true,
+      foreground: '#f8f1f1', visible: true, text: Update, font_size: null, font: Lucida Console,
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#427acf', bold: false, underline: false, icon: ''}
+    name: button_1
+    layout_properties: {grid_position: 'RWIROG,NVHKHW'}
+    event_bindings: {click: button_1_click}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: false, text: Output, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: result
+    layout_properties: {grid_position: 'YEYUEZ,QJLXRY'}
+  - type: Button
+    properties: {role: null, align: right, tooltip: '', border: '', enabled: true,
+      foreground: '#f8f1f1', visible: true, text: Delete, font_size: null, font: Lucida console,
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#427acf', bold: false, underline: false, icon: ''}
+    name: button_2
+    layout_properties: {grid_position: 'YEYUEZ,AOZYDC'}
+    event_bindings: {click: button_2_click}
+  is_package: true
+  code: "from ._anvil_designer import ItemTemplate1Template\nfrom anvil import *\n\
+    import anvil.server\n\nclass ItemTemplate1(ItemTemplate1Template):\n  def __init__(self,\
+    \ **properties):\n    # Set Form properties and Data Bindings.\n    self.init_components(**properties)\n\
+    \n    # Any code you write here will run when the form opens.\n    self.text_box_1.visible\
+    \ = True\n    self.text_box_2.visible = True\n    self.text_box_3.visible = True\n\
+    \    self.text_box_1.text = self.item[\"_id\"]\n    self.text_box_2.text = self.item['name']\n\
+    \    self.text_box_3.text = self.item['passwd']\n\n  def button_1_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    res = anvil.server.call('update',self.text_box_1.text,\n           \
+    \                    self.text_box_2.text,\n                               self.text_box_3.text)\n\
+    \    if res:\n      self.result.visible = True\n      self.result.align = \"center\"\
+    \n      self.result.font_size = 20\n      self.result.text = \"Updated\"\n   \
+    \ else:\n      self.result.text = \"Error while Updated\"\n\n  def button_2_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    res = anvil.server.call('delete_rv',self.text_box_1.text)\n    self.text_box_1.visible\
+    \ = False\n    self.text_box_2.visible = False\n    self.text_box_3.visible =\
+    \ False\n    self.label_1.visible = False\n    self.label_2.visible = False\n\
+    \    self.label_3.visible = False\n    self.button_1.visible = False\n    self.button_2.visible\
+    \ = False\n    if res:\n      self.result.visible = True\n      self.result.align\
+    \ = \"center\"\n      self.result.font_size = 20\n      self.result.text = \"\
+    Deleted\"\n    else:\n      self.result.text = \"Error while Deleting\"\n\n\n\n"
+  class_name: admin_db.ItemTemplate1
+  id: QWCO7EBPLGEOHP2J2H5YRE7LHRATBQKV
+- container:
+    type: ColumnPanel
+    properties: {col_widths: '{}'}
+  components:
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_2
+    layout_properties: {grid_position: 'FJTJON,OEUBCF'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#f8f1f1',
+        visible: true, text: Inserting Visitor's Vehicles, font_size: 30, font: Lucida Console,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#427acf', bold: false, underline: false, icon: ''}
+      name: label_3
+      layout_properties: {grid_position: 'IJCOUE,NHIZNJ'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'POYEZK,FRPKKA'}
+    components:
+    - type: ColumnPanel
+      properties: {col_widths: '{}'}
+      name: column_panel_3
+      layout_properties: {grid_position: 'PMCRMS,TPRFNW'}
+      components:
+      - type: Button
+        properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
+          foreground: '#f8f1f1', visible: true, text: Views, font_size: null, font: Lucida Console,
+          spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+          background: '#427acf', bold: false, underline: false, icon: ''}
+        name: button_2
+        layout_properties: {grid_position: 'KYWTZC,KHCCCS'}
+        event_bindings: {click: button_2_click}
+      - type: Button
+        properties: {role: null, align: right, tooltip: '', border: '', enabled: true,
+          foreground: '#f8f1f1', visible: true, text: Home, font_size: null, font: Lucida Console,
+          spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+          background: '#427acf', bold: false, underline: false, icon: ''}
+        name: button_3
+        layout_properties: {grid_position: 'KYWTZC,HPLCBG'}
+        event_bindings: {click: button_3_click}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: ID, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'VUFYMM,SWFYFZ'}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: ID,
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+        font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false}
+      name: text_box_1
+      layout_properties: {grid_position: 'VUFYMM,ASHVXY'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: License Plate Number, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'OJWSJW,CBKHBU'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: License Plate Number,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_2
+    layout_properties: {grid_position: 'OJWSJW,TFMXJP'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '#f8f1f1', visible: true, text: Insert, font_size: null, font: Lucida Console,
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#427acf', bold: false, underline: false, icon: ''}
+    name: button_1
+    layout_properties: {grid_position: 'JECVNC,AKFYUZ'}
+    event_bindings: {click: button_1_click}
+  - type: Label
+    properties: {}
+    name: result
+    layout_properties: {grid_position: 'RGONXW,GBPRFE'}
+  is_package: true
+  code: "from ._anvil_designer import insert_urvTemplate\nfrom anvil import *\nimport\
+    \ anvil.server\n\nclass insert_urv(insert_urvTemplate):\n  def __init__(self,\
+    \ **properties):\n    # Set Form properties and Data Bindings.\n    self.init_components(**properties)\n\
+    \n    # Any code you write here will run when the form opens.\n\n  def button_1_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    res = anvil.server.call('insert_urvehicles',self.text_box_1.text,self.text_box_2.text)\n\
+    \    if res:\n      self.result.visible = True\n      self.result.align = \"center\"\
+    \n      self.result.font_size = 20\n      self.result.text = \"Inserted\"\n  \
+    \  else:\n      self.result.text = \"Error while Inserting\"\n\n  def button_2_click(self,\
+    \ **event_args):\n    \"\"\"This method is called when the button is clicked\"\
+    \"\"\n    open_form('database')\n\n  def button_3_click(self, **event_args):\n\
+    \    \"\"\"This method is called when the button is clicked\"\"\"\n    open_form('main_page')\n\
+    \n\n\n"
+  class_name: insert_urv
+  id: 5MDC7H4IWLGFCW62GDUSTA5IY5A2775E
+startup: {type: form, module: main_page}
+package_name: ALPR_System
+allow_embedding: false
+name: ALPR_System
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox}
+metadata: {}
+startup_form: Results
+db_schema: {}
+dependency_order: []
+dependency_code: {}
+theme:
+  templates:
+  - name: Standard Page
+    description: ''
+    img: null
+    form:
+      class_name: Form
+      is_package: true
+      container:
+        type: HtmlTemplate
+        properties: {html: '@theme:standard-page.html'}
+      components:
+      - type: ColumnPanel
+        properties: {}
+        name: content_panel
+        layout_properties: {slot: default}
+      code: "from ._anvil_designer import $NAME$Template\nfrom anvil import *\n\n\
+        class $NAME$($NAME$Template):\n\n  def __init__(self, **properties):\n   \
+        \ # Set Form properties and Data Bindings.\n    self.init_components(**properties)\n\
+        \n    # Any code you write here will run when the form opens.\n    \n"
+  parameters:
+    roles: []
+  assets:
+  - {name: standard-page.html, content: PGRpdiBhbnZpbC1zbG90LXJlcGVhdD0iZGVmYXVsdCI+CjwvZGl2PgoKPGNlbnRlciBzdHlsZT0iY29sb3I6Izg4ODsgbWFyZ2luOiA1MHB4OyI+CiAgPGk+VGhpcyBpcyBhIHBsYWNlaG9sZGVyIGZvciB5b3VyIGFwcCdzIGN1c3RvbSBIVE1MLiBFZGl0IGl0IGJ5IGNoYW5naW5nIHRoZSB0aGVtZSBhc3NldHMuPC9pPgo8L2NlbnRlcj4K,
+    id: 5SEVUDF3LLYWRAMTJRUBCSPWLZWCMI6I}
+  - {name: theme.css, content: '', id: 4NK6WTJ2GPWUDG6OTRENWN6PZUSC2JQU}
+server_modules: []
+renamed: true
